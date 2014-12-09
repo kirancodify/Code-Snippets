@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="windows-1252">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kiran Kumar">
+
+    <title>Network Application Framework</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/offcanvas.css" rel="stylesheet">
+ 
+
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">Group05</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li class="active"><a href="./about.html">Friends</a></li>
+	    <li><a href="./education.html">Upload Photo</a></li>
+	    <li><a href="./wall.php">Facebook Canvas</a></li>
+            <li><a href="./activity.html">Pull Data</a></li>
+	    <li><a href="./activity.html">Additional Data</a></li>
+            <li><a href="./contact.html">Reach Us</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+    <div class="container">
+	<div class="jumbotron">
+     
+      <div id="fb-root"></div>
+  <!-- Logout/login facebook code reused from http://developers.facebook.com-->
+  <script>
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '493051537483931',
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
+
+
+  FB.Event.subscribe('auth.authResponseChange', function(response) {
+    // Here we specify what we do with the response anytime this event occurs. 
+    if (response.status === 'connected') {
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      
+      FB.login();
+    } else {
+      
+      FB.login();
+    }
+  });
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+   js.src = "http://connect.facebook.net/en_US/all.js";
+   ref.parentNode.insertBefore(js, ref);
+  }(document));
+
+  // Here we run a very simple test of the Graph API after login is successful. 
+  // This testAPI() function is only called in those cases. 
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Good to see you, ' + response.name + '.');
+    });
+  }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
+  present a graphical Login button that triggers the FB.login() function when clicked. -->
+
+<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+	 
+	  
+</div>
+    </div><!--/.container-->
+ <!--================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="./css/bootstrap.min.js"></script>
+    <script src="./css/offcanvas.js"></script>
+  </body>
+ </html>>

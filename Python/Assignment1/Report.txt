@@ -1,0 +1,193 @@
+Exercise 1 : TLS progamming (DL Tuesday 2014-11-11 23:59)
+
+Name : Kiran Kumar
+Student Id : 399876
+
+---------------------------------------------------------------------------------
+Overview
+
+The Assignment contains a simple http client to send Http 1.1 request.
+The client connects to a remote TLS server. On the reception of the certificates
+from the request, it is verified using Open SSL python libray functions
+and the certificate is displayed. The response of the http GET request is also
+printed out.
+
+---------------------------------------------------------------------------------
+Limitation :
+
+The code is tested and verifies in Ubuntu 14.04.The location of the certificate
+/etc/ssl/certs/ca-certificates.crt is hardcoded in the code for the context setting
+
+---------------------------------------------------------------------------------
+Testing :
+
+1. python Assignment1.py www.google.com 443
+
+Creating Open SSL socket...
+Connecting to socket...
+
+Get method HTTP Request:
+
+ -------------This Certificate is from:-------------
+Country: US
+Common Name: None
+Locality: None
+Organization: Equifax
+State/Province: None
+Organizational Unit: Equifax Secure Certificate Authority
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: None
+Locality: None
+Organization: Equifax
+State/Province: None
+Organizational Unit: Equifax Secure Certificate Authority
+ -------------This Certificate is from:-------------
+Country: US
+Common Name: GeoTrust Global CA
+Locality: None
+Organization: GeoTrust Inc.
+State/Province: None
+Organizational Unit: None
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: None
+Locality: None
+Organization: Equifax
+State/Province: None
+Organizational Unit: Equifax Secure Certificate Authority
+ -------------This Certificate is from:-------------
+Country: US
+Common Name: Google Internet Authority G2
+Locality: None
+Organization: Google Inc
+State/Province: None
+Organizational Unit: None
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: GeoTrust Global CA
+Locality: None
+Organization: GeoTrust Inc.
+State/Province: None
+Organizational Unit: None
+ -------------This Certificate is from:-------------
+Country: US
+Common Name: www.google.com
+Locality: Mountain View
+Organization: Google Inc
+State/Province: California
+Organizational Unit: None
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: Google Internet Authority G2
+Locality: None
+Organization: Google Inc
+State/Province: None
+Organizational Unit: None
+OK
+'HTTP/1.1 302 Found\r\nCache-Control: private\r\nContent-Type: text/html; charset=UTF-8\r\nLocation: https://www.google.de/?gfe_rd=cr&ei=W35iVNusG8uX-AbXloD4DQ\r\nContent-Length: 259\r\nDate: Tue, 11 Nov 2014 21:23:39 GMT\r\nServer: GFE/2.0\r\nAlternate-Protocol: 443:quic,p=0.01\r\n\r\n<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">\n<TITLE>302 Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A HREF="https://www.google.de/?gfe_rd=cr&amp;ei=W35iVNusG8uX-AbXloD4DQ">here</A>.\r\n</BODY></HTML>\r\n'
+
+2.python Assignment1.py WWW.ADOM.DE 443
+
+Creating Open SSL socket...
+Connecting to socket...
+
+Get method HTTP Request:
+
+ -------------This Certificate is from:-------------
+Country: US
+Common Name: None
+Locality: None
+Organization: Equifax
+State/Province: None
+Organizational Unit: Equifax Secure Certificate Authority
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: None
+Locality: None
+Organization: Equifax
+State/Province: None
+Organizational Unit: Equifax Secure Certificate Authority
+ -------------This Certificate is from:-------------
+Country: US
+Common Name: GeoTrust Global CA
+Locality: None
+Organization: GeoTrust Inc.
+State/Province: None
+Organizational Unit: None
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: None
+Locality: None
+Organization: Equifax
+State/Province: None
+Organizational Unit: Equifax Secure Certificate Authority
+ -------------This Certificate is from:-------------
+Country: US
+Common Name: RapidSSL CA
+Locality: None
+Organization: GeoTrust, Inc.
+State/Province: None
+Organizational Unit: None
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: GeoTrust Global CA
+Locality: None
+Organization: GeoTrust Inc.
+State/Province: None
+Organizational Unit: None
+ -------------This Certificate is from:-------------
+Country: DE
+Common Name: *.powerweb.de
+Locality: None
+Organization: *.powerweb.de
+State/Province: None
+Organizational Unit: GT36308742
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: RapidSSL CA
+Locality: None
+Organization: GeoTrust, Inc.
+State/Province: None
+Organizational Unit: None
+OK
+'HTTP/1.1 400 Bad Request\r\nDate: Tue, 11 Nov 2014 21:25:04 GMT\r\nServer: Apache/1.3.31 (Unix) mod_throttle/3.1.2 mod_gzip/1.3.19.1a AuthMySQL/2.20 mod_fastcgi/2.4.2 mod_ssl/2.8.19 OpenSSL/0.9.7e\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nContent-Type: text/html; charset=iso-8859-1\r\n\r\n174\r\n<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">\n<HTML><HEAD>\n<TITLE>400 Bad Request</TITLE>\n</HEAD><BODY>\n<H1>Bad Request</H1>\nYour browser sent a request that this server could not understand.<P>\nclient sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /<P>\n<HR>\n<ADDRESS>Apache/1.3.31 Server at pc17.b1.powerweb.de Port 443</ADDRESS>\n</BODY></HTML>\n\r\n0\r\n\r\n'
+
+3. python Assignment1.py www.pcwebshop.co.uk 443
+
+Creating Open SSL socket...
+Connecting to socket...
+
+Get method HTTP Request:
+
+ -------------This Certificate is from:-------------
+Country: US
+Common Name: Parallels Panel
+Locality: Herndon
+Organization: Parallels
+State/Province: Virginia
+Organizational Unit: Parallels Panel
+--------------This Certificate is Issued by:--------
+Country: US
+Common Name: Parallels Panel
+Locality: Herndon
+Organization: Parallels
+State/Province: Virginia
+Organizational Unit: Parallels Panel
+----------Certificate cannot be Verified--------
+Traceback (most recent call last):
+  File "Assignment1.py", line 68, in <module>
+    ssl.sendall("GET / HTTP/1.1\r\n\r\n")
+OpenSSL.SSL.Error: [('SSL routines', 'SSL3_GET_SERVER_CERTIFICATE', 'certificate verify failed')]
+
+
+----------------------------------------------------------------------------------------------------------
+Reference:
+
+1. https://docs.python.org/2/library/socket.html#socket.socket.recv
+2. http://stackoverflow.com/questions/7749341/very-basic-python-client-socket-example
+3. http://bobthegnome.blogspot.de/2007/08/making-ssl-connection-in-python.html
+4. http://pyopenssl.sourceforge.net/pyOpenSSL.html/openssl-x509.html
+5. http://stackoverflow.com/questions/19145097/getting-certificate-chain-with-python-3-3-ssl-module
+6. https://github.com/sidtechnical/Verifyong-OpenSSL-using-Python
+

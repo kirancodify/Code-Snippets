@@ -1,0 +1,13 @@
+{
+  "name": "MCC_addressbook_REST_API",
+  "description": "Addressbook assignment phase 1 in Mobile Cloud Computing",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "dependencies": {
+    "express": "4.9.5",
+    "body-parser": "1.9.0",
+    "mongoose": "3.8.17"
+  }
+}
+

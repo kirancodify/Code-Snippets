@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="qualified">
+  <xsd:element name="BookSchema">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MyBooks" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="BookShelf" type="xsd:integer"/>
+              <xsd:element name="Id" type="xsd:string"/>
+              <xsd:element name="Title" type="xsd:string"/>
+              <xsd:element name="Author" type="xsd:string"/>
+              <xsd:element name="Date" type="xsd:integer"/>
+              <xsd:element name="Type" type="xsd:string"/>
+              <xsd:element name="Publisher" type="xsd:string"/>
+              <xsd:element name="isOWN">
+              <xsd:simpleType>
+                 <xsd:restriction base="xsd:string">
+                     <xsd:enumeration value="yes"/>
+                        <xsd:enumeration value="no"/>
+                        </xsd:restriction>
+                         </xsd:simpleType></xsd:element>
+              <xsd:element name="hasCD">
+                        <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                     <xsd:enumeration value="yes"/>
+                     <xsd:enumeration value="no"/>
+                        </xsd:restriction>
+                        </xsd:simpleType></xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="xsi" type="xsd:string"/>
+      <xsd:attribute name="schemaLocation" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

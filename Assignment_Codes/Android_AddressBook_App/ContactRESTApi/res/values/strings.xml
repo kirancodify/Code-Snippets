@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ContactRESTApi</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="title_activity_phone_contacts">PhoneContactsActivity</string>
+    <string name="search_phone_contacts">Search phone contacts</string>
+    <string name="phone_contacts_search_message">Name</string>
+    <string name="phone_number">Phone Number: </string>
+    <string name="add_contact_to_phone">Add to the phone contacts</string>
+     <string name="createContact">Create Contact</string>
+      <string name="firstName">First Name</string>
+       <string name="lastName">Last Name</string>
+        <string name="phoneNumber">Phone Number</string>
+        <string name="create">Create</string>
+        <string name="email">Email</string>
+        <string name="line1">Address Line 1</string>
+        <string name="line2">Address Line 2</string>
+        <string name="city">City</string>
+        <string name="country">Country</string>
+        <string name="zipcode">ZipCode</string>
+        <string name="create_contacts">Create Contact</string>
+        
+
+</resources>

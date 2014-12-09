@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<BookSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://www.example.org bookshelf.xsd"
+     xmlns="http://www.example.org">
+        <MyBooks>
+            <BookShelf>1</BookShelf>
+            <Id>F-0001</Id>
+            <Title>My Life and Times</Title>
+            <Author>Paul McCartney</Author>
+            <Date>1998</Date>
+            <Type>Fiction</Type>
+            <Publisher>McMillin Publishing</Publisher>
+            <isOWN>yes</isOWN>
+            <hasCD>no</hasCD>
+        </MyBooks>
+        <MyBooks>
+            <BookShelf>2</BookShelf>
+            <Id>T-0001</Id>
+            <Title>Data Communications and Networking, 4/e</Title>
+            <Author>Behrouz A. Forouzan</Author>
+            <Date>2007</Date>
+            <Type>Technical</Type>
+            <Publisher>McGraw-Hill</Publisher>
+            <isOWN>yes</isOWN>
+            <hasCD>yes</hasCD>
+        </MyBooks>
+        <MyBooks>
+            <BookShelf>2</BookShelf>
+            <Id>T-0002</Id>
+            <Title>Complete Refererence C</Title>
+            <Author>Herbert Schildt</Author>
+            <Date>200</Date>
+            <Type>Technical</Type>
+            <Publisher>Osborne</Publisher>
+            <isOWN>no</isOWN>
+            <hasCD>yes</hasCD>
+        </MyBooks>
+        <MyBooks>
+            <BookShelf>2</BookShelf>
+            <Id>F-0020</Id>
+            <Title>n or m?</Title>
+            <Author>Agatha Christie</Author>
+            <Date>1941</Date>
+            <Type>Fiction</Type>
+            <Publisher>The Crime Club</Publisher>
+            <isOWN>no</isOWN>
+            <hasCD>no</hasCD>
+        </MyBooks>
+        <MyBooks>
+            <BookShelf>1</BookShelf>
+            <Id>M-0020</Id>
+            <Title>The Inidan Curry</Title>
+            <Author>Sanjeev</Author>
+            <Date>2008</Date>
+            <Type>Misc</Type>
+            <Publisher>Spices</Publisher>
+            <isOWN>yes</isOWN>
+            <hasCD>no</hasCD>
+        </MyBooks>
+        <MyBooks>
+            <BookShelf>1</BookShelf>
+            <Id>C-0020</Id>
+            <Title>Batman and Robin</Title>
+            <Author></Author>
+            <Date>2008</Date>
+            <Type>Comic</Type>
+            <Publisher>DC Comics</Publisher>
+            <isOWN>yes</isOWN>
+            <hasCD>no</hasCD>
+        </MyBooks>
+</BookSchema>
